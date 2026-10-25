@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where Am I</title>
+  <meta name="description" content="See your live location on a map, with photos and facts about the place around you.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>📍 Where Am I</h1>
+    <div class="controls">
+      <button id="locateBtn" type="button">Track my location</button>
+      <button id="recenterBtn" type="button" class="secondary" disabled>Recenter</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="map-wrap">
+      <div id="map" aria-label="Map"></div>
+      <p class="hint">Tip: click anywhere on the map to explore that place.</p>
+    </section>
+
+    <aside class="panel">
+      <div id="status" class="status">Press “Track my location” to begin.</div>
+
+      <section id="placeCard" class="card hidden">
+        <img id="placeImage" class="hero hidden" alt="">
+        <div class="card-body">
+          <h2 id="placeName"></h2>
+          <p id="placeAddress" class="muted"></p>
+          <dl class="facts">
+            <div><dt>Coordinates</dt><dd id="coords"></dd></div>
+            <div><dt>Accuracy</dt><dd id="accuracy"></dd></div>
+            <div><dt>Weather</dt><dd id="weather"></dd></div>
+            <div><dt>Updated</dt><dd id="updated"></dd></div>
+          </dl>
+          <p id="placeSummary"></p>
+          <a id="placeLink" class="hidden" target="_blank" rel="noopener">Read more on Wikipedia →</a>
+        </div>
+      </section>
+
+      <section id="nearbySection" class="hidden">
+        <h3>Nearby places</h3>
+        <ul id="nearbyList" class="nearby"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors ·
+    Places &amp; photos from <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a> ·
+    Weather by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
